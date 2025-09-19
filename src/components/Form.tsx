@@ -37,9 +37,7 @@ const Form = ({ onChange }: FormProps) => {
       }}
     >
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <label style={{  color: "#fff" }}>
-          Character name
-        </label>
+        <label style={{ color: "#fff" }}>Character name</label>
         <input
           type="text"
           value={name}
@@ -54,9 +52,7 @@ const Form = ({ onChange }: FormProps) => {
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <label style={{  color: "#fff" }}>
-          Character color
-        </label>
+        <label style={{ color: "#fff" }}>Character color</label>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
           <input
             type="color"
@@ -70,9 +66,7 @@ const Form = ({ onChange }: FormProps) => {
               cursor: "pointer",
             }}
           />
-          <span style={{  color: "#fff" }}>
-            {colorName || "…"}
-          </span>
+          <span style={{ color: "#fff" }}>{colorName || "…"}</span>
         </div>
       </div>
     </div>
