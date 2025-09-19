@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import Form from "./components/Form";
+import Map from "./components/Map";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [character, setCharacter] = useState({ name: "", color: "#ff0000" });
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div style={{ display: "flex", gap: "2rem", height: "100vh",width: "100%" }}>
+      <div         style={{
+          flex: 1,
+          minWidth: "250px",
+          padding: "1rem",
+          boxSizing: "border-box",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}>
+        <Form onChange={setCharacter} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      <div         style={{
+          flex: 2,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "1rem",
+          boxSizing: "border-box",
+        }}>
+        <Map
+          width={600}
+          height={400}
+          name={character.name || "Unnamed"}
+          color={character.color}
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
